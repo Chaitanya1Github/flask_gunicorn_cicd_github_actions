@@ -14,4 +14,5 @@ WORKDIR /application
 #CMD ["gunicorn"  , "--bind", "0.0.0.0:5000", "wsgi:app"]       run with gunicorn
 
 # run with gunicorn in heroku
-CMD gunicorn --bind 0.0.0.0:$PORT wsgi
+#CMD gunicorn --bind 0.0.0.0:$PORT wsgi
+ENTRYPOINT ["python3", "app.py"]
