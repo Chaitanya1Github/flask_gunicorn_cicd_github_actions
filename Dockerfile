@@ -3,7 +3,7 @@ FROM python:3.8-slim-buster
 
 ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-COPY application ./application
+COPY . ./application
 WORKDIR /application
 #RUN apt-get update
 #RUN apt install -y nginx
