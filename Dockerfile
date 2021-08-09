@@ -10,9 +10,9 @@ WORKDIR /application
 #RUN rm /etc/nginx/conf.d/default.conf
 #COPY nginx.conf /etc/nginx/conf.d/nginx.conf
 #EXPOSE 5000
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]      run without gunicorn
-#CMD ["gunicorn"  , "--bind", "0.0.0.0:5000", "wsgi:app"]       run with gunicorn
+#CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+#CMD ["gunicorn"  , "--bind", "0.0.0.0:5000", "wsgi:app"]
 
 # run with gunicorn in heroku
-#CMD gunicorn --bind 0.0.0.0:$PORT wsgi
+CMD gunicorn --bind 0.0.0.0:$PORT wsgi
 #ENTRYPOINT ["python3", "app.py"]
